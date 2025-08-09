@@ -111,14 +111,83 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildProfilePage() {
-    return const Center(
-      child: Text(
-        "Ini halaman profil",
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+Widget _buildProfilePage() {
+  return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Colors.orange,
+      title: const Text(
+        "Profil",
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
-    );
-  }
+      centerTitle: true,
+    ),
+    body: SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage('https://avatars.githubusercontent.com/u/84488120'), // ganti sesuai aset kamu
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            "Rahmat Hidayat Majid",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            "rahmat@hidayat.com",
+            style: TextStyle(fontSize: 16, color: Colors.grey),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            "Pengembang Flutter pemula yang sedang belajar membuat aplikasi ",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
+          const SizedBox(height: 30),
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 2,
+            child: const ListTile(
+              leading: Icon(Icons.phone, color: Colors.orange),
+              title: Text("Nomor Telepon"),
+              subtitle: Text("+62 812 3456 7890"),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 2,
+            child: const ListTile(
+              leading: Icon(Icons.location_on, color: Colors.orange),
+              title: Text("Lokasi"),
+              subtitle: Text("Banda Aceh, Indonesia"),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 2,
+            child: const ListTile(
+              leading: Icon(Icons.work, color: Colors.orange),
+              title: Text("Pekerjaan"),
+              subtitle: Text("Mahasiswa / Flutter Developer"),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
