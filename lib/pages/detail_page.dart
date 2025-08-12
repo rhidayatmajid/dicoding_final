@@ -6,11 +6,11 @@ class DetailPage extends StatelessWidget {
   final String image;
 
   const DetailPage({
-    Key? key,
+    super.key,
     required this.name,
     required this.price,
     required this.image,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
